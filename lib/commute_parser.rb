@@ -22,4 +22,10 @@ class CommuteParser
     hash
   end
 
+  def data_point(parameter, name, week, day)
+    hashify[name].each do |info|
+      return info[parameter] if info[:week] == week && info[:day] == day
+    end
+  end
+
 end
