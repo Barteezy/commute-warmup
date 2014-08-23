@@ -5,6 +5,7 @@ describe "CommuteParser" do
     csv = <<HEREDOC
 Emily,4,Monday,Walk,12,15,0.65
 Gerard,1,Wednesday,Drive,14,12,5
+Emily,5,Tuesday,Walk,12,15,0.65
 HEREDOC
     commute_parser = CommuteParser.new(csv)
     actual = commute_parser.hashify
@@ -19,7 +20,14 @@ HEREDOC
                 outbound: 15,
                 distance: 0.65
             },
-
+            {
+                week: 5,
+                day: "Tuesday",
+                mode: "Walk",
+                inbound: 12,
+                outbound: 15,
+                distance: 0.65
+            },
         ],
         "Gerard" => [
             {
