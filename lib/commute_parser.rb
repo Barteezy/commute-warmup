@@ -28,4 +28,17 @@ class CommuteParser
     end
   end
 
+  def average_total_commutes
+    commute_time = 0
+    total_commutes = 0
+    hashify.each_value do |commute_list|
+      commute_list.each do |commute|
+        commute_time += commute[:inbound] += commute[:outbound]
+        total_commutes += 2
+      end
+    end
+    avg = commute_time/total_commutes.to_f
+    avg.round(1)
+  end
+
 end
