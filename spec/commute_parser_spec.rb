@@ -3,6 +3,7 @@ require 'commute_parser'
 describe "CommuteParser" do
   it "parses CSV into data hash" do
     csv = <<HEREDOC
+Person,Week,Day,Mode,Inbound,Outbound,Distance
 Emily,4,Monday,Walk,12,15,0.65
 Gerard,1,Wednesday,Drive,14,12,5
 Emily,5,Tuesday,Walk,12,15,0.65
@@ -46,6 +47,7 @@ HEREDOC
 
   it "returns a data point for specified parameter" do
     csv = <<HEREDOC
+Person,Week,Day,Mode,Inbound,Outbound,Distance
 Emily,4,Monday,Walk,12,15,0.65
 Gerard,5,Tuesday,Drive,14,12,5
 Emily,5,Wednesday,Drive,10,40,97
@@ -61,6 +63,7 @@ HEREDOC
 
   it "returns the average time of commutes" do
     csv = <<HEREDOC
+Person,Week,Day,Mode,Inbound,Outbound,Distance
 Emily,4,Monday,Walk,12,15,0.65
 Gerard,5,Tuesday,Drive,14,12,5
 Emily,5,Wednesday,Drive,10,40,97

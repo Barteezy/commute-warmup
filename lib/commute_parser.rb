@@ -7,6 +7,7 @@ class CommuteParser
   def hashify
     hash = {}
     records = @csv.split("\n")
+    records.delete_at(0)
     records.each do |record|
       datum = record.split(",")
       hash[datum[0]] ||= []
