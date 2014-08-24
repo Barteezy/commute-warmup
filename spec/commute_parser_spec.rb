@@ -75,4 +75,19 @@ HEREDOC
     expected = 16.4
     expect(actual).to eq(expected)
   end
+
+  it "returns the name and average speed of the fastest walker" do
+    csv = <<HEREDOC
+Person,Week,Day,Mode,Inbound,Outbound,Distance
+Emily,4,Monday,Walk,15,15,0.65
+Gerard,5,Tuesday,Walk,30,29,0.5
+Rebecca,5,Wednesday,Drive,10,40,97
+Emily,5,Tuesday,Walk,20,20,0.65
+HEREDOC
+
+    commute_parser = CommuteParser.new(csv)
+    actual = commute_parser.fastest_walker_and_speed
+    expected = ["Emily", 2.23]
+    expect(actual).to eq(expected)
+  end
 end

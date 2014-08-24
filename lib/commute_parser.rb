@@ -40,6 +40,6 @@ class CommuteParser
     end
     avg = commute_time/total_commutes.to_f
     avg.round(1)
-  end
+  end\
 
 end
